@@ -1,62 +1,53 @@
-[Project]
-FileName=0209.c
-Name=0209
-Type=1
-Ver=2
-ObjFiles=
-Includes=
-Libs=
-PrivateResource=
-ResourceIncludes=
-MakeIncludes=
-Compiler=
-CppCompiler=
-Linker=
-IsCpp=0
-Icon=
-ExeOutput=
-ObjectOutput=
-LogOutput=
-LogOutputEnabled=0
-OverrideOutput=0
-OverrideOutputName=
-HostApplication=
-UseCustomMakefile=0
-CustomMakefile=
-CommandLine=
-Folders=
-IncludeVersionInfo=0
-SupportXPThemes=0
-CompilerSet=0
-CompilerSettings=0000000000000000000000000
-UnitCount=1
+#include <stdio.h>
+#include <stdlib.h>
 
-[VersionInfo]
-Major=1
-Minor=0
-Release=0
-Build=0
-LanguageID=1033
-CharsetID=1252
-CompanyName=
-FileVersion=
-FileDescription=Developed using the Dev-C++ IDE
-InternalName=
-LegalCopyright=
-LegalTrademarks=
-OriginalFilename=
-ProductName=
-ProductVersion=
-AutoIncBuildNr=0
-SyncProduct=1
 
-[Unit1]
-FileName=0209.c
-CompileCpp=0
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
 
+void exec2 (){
+		float dola, real, cota;
+		scanf("%f", &dola);
+		scanf("%f", &real);
+		scanf("%f", &cota);
+		printf("%f Reais sao %f  Dolinhos", real, (real/cota));
+}
+
+void exec3 (){
+		float tempC, tempF;
+		scanf("%f", &tempC);
+		tempF = tempC *(9.0/5.0) + 32.0;
+		printf("A temperatura maxima de hoje na tela da globo %f", tempF);
+}
+
+void exec8(){
+		int segundos, horas, minutos;
+		scanf("%d", &segundos);
+		horas = segundos/3600;
+		minutos = (segundos - (horas*3600))/60;
+		segundos = segundos - ((horas*3600) + (minutos*60));
+		printf("Tempo %d:%d:%d\n", horas, minutos, segundos);
+}
+
+int main(int argc, char *argv[]) {
+	int resposta;
+	printf("Qual exercicio quer resolver |2|3|8|/n");
+	scanf("%d", &resposta);
+	
+	switch(resposta){
+	
+	case 2:
+		exec2();	
+	break;
+	
+	case 3:
+		exec3();
+	break;
+	
+	case 8:
+		exec8();
+	break;
+	
+	}
+	
+	
+	return 0;
+}
